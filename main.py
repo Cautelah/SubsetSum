@@ -1,4 +1,4 @@
-k = 100
+k = 50
 todos_os_valores = [15, 22, 14, 26, 32, 9, 16, 8]
 todos_os_valores = [x+1 for x in range(k)]
 todos_os_valores.sort()
@@ -20,7 +20,7 @@ def resolver(valores,k,subset=[], atual=0):
     if somar_lista(subset) == k:
       print(subset)
       solucoes += 1
-    if somar_lista(subset) < k:
+    if somar_lista(subset) < k and k-somar_lista(subset) > valores[atual]:
       resolver(valores,k,subset,atual+1)   
     atual -= i   
     subset.pop()
